@@ -35,7 +35,6 @@ import (
 
 	"github.com/giantswarm/aws-peering-tags-operator/pkg/aws/scope"
 	"github.com/giantswarm/aws-peering-tags-operator/pkg/tagger"
-	_ "github.com/giantswarm/aws-peering-tags-operator/pkg/tagger"
 )
 
 // AWSClusterReconciler reconciles a AWSCluster object
