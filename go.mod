@@ -1,6 +1,6 @@
 module github.com/giantswarm/aws-peering-tags-operator
 
-go 1.18
+go 1.17
 
 require (
 	github.com/aws/aws-sdk-go v1.44.35
