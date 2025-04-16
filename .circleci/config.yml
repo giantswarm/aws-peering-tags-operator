@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  architect: giantswarm/architect@4.35.5
+  architect: giantswarm/architect@5.12.1
 
 workflows:
   build:
@@ -46,4 +46,3 @@ workflows:
               ignore: /.*/
             tags:
               only: /^v.*/
-
