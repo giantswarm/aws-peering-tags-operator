@@ -77,8 +77,8 @@ func (r *AWSClusterReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 
 	secretByte, ok := credentialSecret.Data["aws.awsoperator.arn"]
 	if !ok {
-		logger.Error(err, "Unable to extract ARN from secret")
-		return ctrl.Result{}, microerror.Mask(fmt.Errorf("Unable to extract ARN from secret %s for cluster %s", credentialName, cluster.Name))
+		logger.Error(err, "unable to extract ARN from secret")
+		return ctrl.Result{}, microerror.Mask(fmt.Errorf("unable to extract ARN from secret %s for cluster %s", credentialName, cluster.Name))
 
 	}
 
@@ -90,8 +90,8 @@ func (r *AWSClusterReconciler) Reconcile(ctx context.Context, req ctrl.Request) 
 	accountID := re.FindAllString(arn, 1)[0]
 
 	if accountID == "" {
-		logger.Error(err, "Unable to extract Account ID from ARN")
-		return ctrl.Result{}, microerror.Mask(fmt.Errorf("Unable to extract Account ID from ARN %s", string(arn)))
+		logger.Error(err, "unable to extract Account ID from ARN")
+		return ctrl.Result{}, microerror.Mask(fmt.Errorf("unable to extract Account ID from ARN %s", string(arn)))
 
 	}
 

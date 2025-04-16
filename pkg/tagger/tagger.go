@@ -65,7 +65,7 @@ func (s *TaggerService) Reconcile(ctx context.Context) error {
 		return err
 	}
 	if peeringConnectionsOutput.VpcPeeringConnections[0].Tags != nil {
-		s.Scope.Logger.Info("Already tagged VPC peering connection, skipping", s.Scope.ClusterNamespace(), s.Scope.ClusterName())
+		s.Scope.Info("Already tagged VPC peering connection, skipping", s.Scope.ClusterNamespace(), s.Scope.ClusterName())
 		return nil
 	}
 
@@ -81,7 +81,7 @@ func (s *TaggerService) Reconcile(ctx context.Context) error {
 	if err != nil {
 		return err
 	}
-	s.Scope.Logger.Info("Tagged VPC peering connection", s.Scope.ClusterNamespace(), s.Scope.ClusterName())
+	s.Scope.Info("Tagged VPC peering connection", s.Scope.ClusterNamespace(), s.Scope.ClusterName())
 
 	return nil
 }
